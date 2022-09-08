@@ -48,10 +48,10 @@ export async function getStaticProps({ params }): Promise<IStaticProps> {
 function PriceSWR(id: string | string[]) {
   const address = `https://fakestoreapi.com/products/category/electronics`;
   const fetcher = async (url) => await fetch(url).then((res) => res.json());
-  const { data, error } = useSWR(address, fetcher);
+  const { data, error } = useSWR(address, fetcher, { refreshInterval: 5000 });
 
   if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (!data) return <Div>loading...</Div>;
 
   let productSWRFiltered: IProduct = data.filter(
     (product: IProduct) => product.id === Number(id)
