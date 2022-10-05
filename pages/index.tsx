@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 import Card from "../components/Card";
-import Header from "../components/Header";
+import { Navbar } from "../components/Navbar/Navbar";
 import React from "react";
+import { Header } from "../components/Header/Header";
 
 export interface IProduct {
   id: number;
@@ -57,15 +58,15 @@ const Products: NextPage = (props: any) => {
 
   return (
     <WrapperPage>
-      <Header>
-        <h1>E-commerce</h1>
-      </Header>
+      <Navbar />
+      <Header />
       <List>
-        {products
-          .sort((a, b) => b.rating.rate - a.rating.rate)
-          .map((product: IProduct) => (
-            <Card product={product} key={product.id} />
-          ))}
+        {products &&
+          products
+            .sort((a, b) => b.rating.rate - a.rating.rate)
+            .map((product: IProduct) => (
+              <Card product={product} key={product.id} />
+            ))}
       </List>
     </WrapperPage>
   );

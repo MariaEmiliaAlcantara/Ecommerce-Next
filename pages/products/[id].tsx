@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { IProduct } from "..";
-import Header from "../../components/Header";
+import { Navbar } from "../../components/Navbar/Navbar";
 import useSWR from "swr";
 import Link from "next/link";
 
@@ -112,13 +112,7 @@ const Product = (props: any) => {
 
   return (
     <>
-      <Header>
-        <Link href={"/"}>
-          <a>
-            <h1>E-commerce</h1>
-          </a>
-        </Link>
-      </Header>
+      <Navbar />
       <WrapperMain>
         <PhotoContainer>
           <ImageProduct src={productsSSG.image} />
