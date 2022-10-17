@@ -1,46 +1,51 @@
 import Link from "next/link";
 import styled from "styled-components";
-import { IProduct } from "../pages";
+import { IProduct } from "../../pages";
 
 const ListItem = styled.li`
-  background-color: white;
-  border: 2px solid #8ba58b;
-  border-radius: 10px;
-  padding: 30px;
-  width: 280px;
-  height: 280px;
-  margin-top: 20px;
+  width: 320px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const ImageContainer = styled.div`
+  height: 360px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: #f3f3f3;
 `;
 
 const Image = styled.img`
-  width: 100px;
+  width: 200px;
+  height: 180px;
+`;
+
+const TitleContainer = styled.div`
   height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.div`
-  height: 80px;
-  font-size: 14px;
-  text-align: center;
+  width: 90%;
+
   display: flex;
+  text-align: center;
   align-items: center;
-  font-weight: bold;
-  margin-top: 20px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 `;
 
-const Rate = styled.div`
-  margin-top: 10px;
-`;
-
-const Card = ({ product }) => {
+const Card: React.FC<{ product: IProduct }> = ({ product }) => {
   return (
     <ListItem>
       <Link href={`/products/${product.id}`}>
@@ -48,10 +53,9 @@ const Card = ({ product }) => {
           <ImageContainer>
             <Image src={product.image} />
           </ImageContainer>
-          <Title>{product.title}</Title>
-          <Rate>
-            <strong>Rate:</strong> {product.rating.rate}
-          </Rate>
+          <TitleContainer>
+            <Title>{product.title.toUpperCase()}</Title>
+          </TitleContainer>
         </a>
       </Link>
     </ListItem>

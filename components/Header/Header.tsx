@@ -73,7 +73,7 @@ export const Header = () => {
         <ButtonHeader>DISCOVER MORE</ButtonHeader>
       </ContainerLeft>
       <ContainerRigth>
-        <ImageHeader src="/headerImage.jpg" />
+        <ImageHeader src="/headerImage.jpg" alt="electronicsW" />
       </ContainerRigth>
     </Wrapper>
   );

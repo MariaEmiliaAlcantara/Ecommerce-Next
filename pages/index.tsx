@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
-import Card from "../components/Card";
+import Card from "../components/Card/Card";
 import { Navbar } from "../components/Navbar/Navbar";
 import React from "react";
 import { Header } from "../components/Header/Header";
+import { CardArea } from "../components/CardArea/CardArea";
 
 export interface IProduct {
   id: number;
@@ -31,15 +32,6 @@ const WrapperPage = styled.div`
   justify-content: center;
 `;
 
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  padding: 20px;
-`;
-
 export async function getStaticProps(): Promise<IISRProps> {
   const products: IProduct[] = await fetch(
     "https://fakestoreapi.com/products/category/electronics?sort=asc"
@@ -60,14 +52,14 @@ const Products: NextPage = (props: any) => {
     <WrapperPage>
       <Navbar />
       <Header />
-      <List>
+      <CardArea>
         {products &&
           products
             .sort((a, b) => b.rating.rate - a.rating.rate)
             .map((product: IProduct) => (
               <Card product={product} key={product.id} />
             ))}
-      </List>
+      </CardArea>
     </WrapperPage>
   );
 };

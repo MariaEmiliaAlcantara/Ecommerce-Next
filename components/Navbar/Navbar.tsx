@@ -57,7 +57,9 @@ export const Navbar = () => {
         <MenuItems>SHOP</MenuItems>
         <MenuItems>ESSENTIALS</MenuItems>
         <img src="/logo.svg"></img>
-        <MenuItems>BEST SELLERS</MenuItems>
+        <MenuItems>
+          <a href="/#topSellings">TOP SELLINGS</a>
+        </MenuItems>
         <MenuItems>ABOUT US</MenuItems>
         <DivIcons>
           <img src="/user.svg" alt="" />
