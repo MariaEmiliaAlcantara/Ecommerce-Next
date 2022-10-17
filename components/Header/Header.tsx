@@ -45,6 +45,7 @@ const ButtonHeader = styled.div`
   font-weight: 700;
   font-size: 14px;
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 const ContainerRigth = styled.div`

@@ -54,9 +54,13 @@ export const Navbar = () => {
         <DivIcons>
           <img src="/search.svg" alt="" />
         </DivIcons>
-        <MenuItems>SHOP</MenuItems>
+        <MenuItems>
+          <a href="/">SHOP</a>
+        </MenuItems>
         <MenuItems>ESSENTIALS</MenuItems>
-        <img src="/logo.svg"></img>
+        <a href="/">
+          <img src="/logo.svg"></img>
+        </a>
         <MenuItems>
           <a href="/#topSellings">TOP SELLINGS</a>
         </MenuItems>

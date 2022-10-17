@@ -5,6 +5,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import React from "react";
 import { Header } from "../components/Header/Header";
 import { CardArea } from "../components/CardArea/CardArea";
+import { Footer } from "../components/Footer/Footer";
 
 export interface IProduct {
   id: number;
@@ -60,6 +61,7 @@ const Products: NextPage = (props: any) => {
               <Card product={product} key={product.id} />
             ))}
       </CardArea>
+      <Footer />
     </WrapperPage>
   );
 };
