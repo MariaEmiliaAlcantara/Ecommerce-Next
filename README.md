@@ -1,4 +1,4 @@
-<h1 align="center">Short URL - Frontend</h1>
+<h1 align="center">Ecommerce - Next.js</h1>
 
 ## 📝 Descrição
 
